@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "a4-sleeptracker-petorio": {
+      "hosting": {
+        "app": [
+          "a4-sleeptracker-petorio"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "a4-sleeptracker-petorio"
+  }
+}

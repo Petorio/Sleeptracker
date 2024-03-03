@@ -1,0 +1,67 @@
+.grid {
+    text-align: center;
+}
+  
+.row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+}
+
+.title-row {
+    padding-top: 30px;
+    align-items: center;
+}
+
+.logButtons {
+    size: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+.list {
+    padding-top: 75px;
+    --background: rgb(80, 80, 80);
+}
+
+ion-content {
+    --background: rgb(66,78,149);
+    --background: linear-gradient(rgba(66,78,149,1) 0%, rgba(99,210,227,1) 52%, rgba(93,140,227,1) 100%);
+}
+
+ion-toolbar {
+    --background: rgb(80, 80, 80);
+}
+
+ion-datetime {
+    color: white;
+}
+
+ion-item {
+    --background: rgb(80, 80, 80);
+    align-items: center;
+}
+
+ion-col {
+    --background: rgb(80, 80, 80);
+    align-items: center;
+    text-align: center;
+}
+
+ion-card {
+    --background: rgb(116, 116, 116);
+    color: white;
+}
+
+ion-title {
+    text-align: center;
+}
+
+ion-card-title {
+    color: rgb(238, 238, 238);
+    font-size: 24px;
+}
+
+ion-card-subtitle {
+    color: rgb(238, 238, 238);
+}

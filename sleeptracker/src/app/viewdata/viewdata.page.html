@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View Sleep Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="title-row">
+      <ion-col>
+        <ion-title style="font-size: 25px;">Sleep Log</ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-card *ngFor="let sleepData of sleepDataArray; let i = index">
+          <ion-card-header>
+            <ion-card-title>Log {{i+1}}</ion-card-title>
+            <ion-card-subtitle>On the {{sleepData.startDate}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{sleepData.length}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="title-row">
+      <ion-col>
+        <ion-title style="font-size: 25px;">Sleepiness Log</ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-card *ngFor="let sleepinessData of sleepinessDataArray; let i = index">
+          <ion-card-header>
+            <ion-card-title>Log {{i+1}}</ion-card-title>
+            <ion-card-subtitle>Logged on {{sleepinessData.loggedAt}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{sleepinessData.level}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button size="large" class="logButtons" [routerLink]="['/home']">Return Home</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>

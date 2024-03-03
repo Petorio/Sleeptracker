@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log Your Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row class="row">
+      <ion-col>
+        <ion-item (click)="showCalendar = !showCalendar">
+          <ion-label>
+            Date and Time
+          </ion-label>
+          <ion-text slot="end">
+            {{formattedString}}
+          </ion-text>
+        </ion-item>
+        <ion-datetime *ngIf="showCalendar" #datetime [(ngModel)]="dateTime" size="cover" 
+        (ionChange)="dateChanged(datetime.value)" showDefaultButtons="true" (ionCancel)="showCalendar = false;">
+
+        </ion-datetime>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Degree of Sleepiness" value="brown" okText="Confirm" cancelText="Cancel" [(ngModel)]="degree">
+              <ion-select-option value="1">1: Feeling active, vital, alert, or wide awake</ion-select-option>
+              <ion-select-option value="2">2: Functioning at high levels, but not at peak; able to concentrate</ion-select-option>
+              <ion-select-option value="3">3: Awake, but relaxed; responsive but not fully alert</ion-select-option>
+              <ion-select-option value="4">4: Somewhat foggy, let down</ion-select-option>
+              <ion-select-option value="5">5: Foggy; losing interest in remaining awake; slowed down</ion-select-option>
+              <ion-select-option value="6">6: Sleepy, woozy, fighting sleep; prefer to lie down</ion-select-option>
+              <ion-select-option value="7">7: No longer fighting sleep, sleep onset soon; having dream-like thoughts</ion-select-option>
+            </ion-select> 
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="row">
+      <ion-col>
+        <ion-button size="large" class="logButtons" (click)="logSleepiness()">
+          Log Sleepiness
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button size="large" class="logButtons" [routerLink]="['/home']">Return Home</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log Your Sleep!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid">
+    <ion-row class="row">
+      <ion-col>
+        <ion-item (click)="showCalendar = !showCalendar">
+          <ion-label>
+            Start Time
+          </ion-label>
+          <ion-text slot="end">
+            {{formattedString}}
+          </ion-text>
+        </ion-item>
+        <ion-datetime *ngIf="showCalendar" #datetime [(ngModel)]="startTime" size="cover" 
+        (ionChange)="dateChanged(datetime.value)" showDefaultButtons="true" (ionCancel)="showCalendar = false;">
+
+        </ion-datetime>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row">
+      <ion-col>
+        <ion-item (click)="showCalendar2 = !showCalendar2">
+          <ion-label>
+            End Time
+          </ion-label>
+          <ion-text slot="end">
+            {{formattedString2}}
+          </ion-text>
+        </ion-item>
+        <ion-datetime *ngIf="showCalendar2" #datetime2 [(ngModel)]="endTime" size="cover" 
+        (ionChange)="dateChanged2(datetime2.value)" showDefaultButtons="true" (ionCancel)="showCalendar2 = false;">
+
+        </ion-datetime>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="row">
+      <ion-col>
+        <ion-button size="large" class="logButtons" (click)="logSleep()">
+          Log Sleep
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button size="large" class="logButtons" [routerLink]="['/home']">Return Home</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
