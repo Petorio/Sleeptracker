@@ -23,17 +23,20 @@
 
 # Installation
 
-## Packages
+## Ionic CLI
 ```
-npm i -g typescript
-npm i -g live-server
-```
-
-## Running Transpiler
-- After installing above packages, you can run the following command to recompile code automatically.
-```
-tsc --watch --p tsconfig.json
+npm i -g @ionic/cli
 ```
 
-## View in live-server
-- Use the live-server installed to view the application.
+## Dependencies
+- Install the required dependencies with the following command.
+```
+npm i
+```
+
+## Running Ionic
+- After installing Ionic, you can run the following commands to run the app inside of the sleeptracker directory.
+```
+cd sleeptracker
+ionic serve
+```
